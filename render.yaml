@@ -2,20 +2,18 @@ services:
   - type: web
     name: n8n
     env: docker
-    plan: standard
+    image: n8nio/n8n:latest     # koristi oficijelni image; ukloni dockerfilePath
+    plan: standard              # ili "starter" ako želiš jeftinije
     autoDeploy: true
-    dockerfilePath: ./Dockerfile  # ili official image u image:
     envVars:
       - key: N8N_ENCRYPTION_KEY
-        value: "<jaka_random_lozinka_32+>"
+        value: "CHANGE_ME_32CHARS_MIN"
       - key: N8N_HOST
-        value: "my-n8n.onrender.com"
+        value: "your-subdomain.onrender.com"
       - key: N8N_PROTOCOL
         value: "https"
-      - key: N8N_PORT
-        value: "443"
       - key: WEBHOOK_URL
-        value: "https://my-n8n.onrender.com/"
+        value: "https://your-subdomain.onrender.com/"
       - key: N8N_DATABASE_TYPE
         value: "postgresdb"
       - key: DB_POSTGRESDB_HOST
@@ -40,5 +38,7 @@ services:
           property: password
       - key: DB_POSTGRESDB_SSL
         value: "true"
-    databases:
-      - name: n8n-db
+
+databases:
+  - name: n8n-db
+    plan: starter
