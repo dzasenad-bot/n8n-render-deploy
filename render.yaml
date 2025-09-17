@@ -2,9 +2,10 @@ services:
   - type: web
     name: n8n
     env: docker
-    image: n8nio/n8n:latest     # koristi oficijelni image; ukloni dockerfilePath
-    plan: standard              # ili "starter" ako želiš jeftinije
+    plan: standard        # ili "starter"
     autoDeploy: true
+    image:
+      url: n8nio/n8n:latest
     envVars:
       - key: N8N_ENCRYPTION_KEY
         value: "CHANGE_ME_32CHARS_MIN"
