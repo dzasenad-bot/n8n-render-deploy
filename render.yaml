@@ -1,7 +1,7 @@
 services:
-  - type: web_service
+  - type: web
+    runtime: image
     name: n8n
-    env: docker
     plan: starter
     image:
       url: n8nio/n8n:latest
