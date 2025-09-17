@@ -3,15 +3,5 @@ services:
     name: n8n
     env: docker
     plan: starter
-    autoDeploy: true
     image:
       url: n8nio/n8n:latest
-    envVars:
-      - key: N8N_ENCRYPTION_KEY
-        value: "CHANGE_ME_32CHARS_MIN"
-      - key: N8N_PROTOCOL
-        value: "https"
-      - key: N8N_HOST
-        value: "your-subdomain.onrender.com"
-      - key: WEBHOOK_URL
-        value: "https://your-subdomain.onrender.com/"
