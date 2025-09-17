@@ -3,5 +3,7 @@ services:
     name: n8n
     env: docker
     plan: starter
+    region: frankfurt
     image:
       url: n8nio/n8n:latest
+    healthCheckPath: /
